@@ -28,7 +28,15 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 20px;
         border-radius: 15px 15px 20px 15px;
+
+          /* breakpoints */
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+            border-bottom-left-radius: 40px;
+            gap: 8em;
+        }
       }
+
       .input-field {
           width: 300px;
           height: 380px;
@@ -44,6 +52,15 @@
           justify-content: space-between;
           margin: 0 20px;
           font-size: 10px;
+
+              /* breakpoints */
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+            justify-content: unset;
+            align-items: flex-start;
+            text-align: justify;
+            margin: 2em 20px;
+        }
       }
       .clear-all {
           color: gray;
@@ -76,6 +93,11 @@
       .y-and-i-wrapper {
           display: flex;
           margin: 20px 0 20px 20px ;
+
+              /* breakpoints */
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+        }
       }
       .y-and-i-wrapper label {
           position: relative;
@@ -101,7 +123,6 @@
 
       }
 
-
           /* Morgate Type */
       .mortgage-type {
           display: flex;
@@ -118,8 +139,8 @@
           border: 1px solid #000;
           border-radius: 5px;
       }
+      
     
-
       .calculate {
           padding: 10px 30px;
           text-align: center;
@@ -128,6 +149,13 @@
           border: none;
           border-radius: 20px;
           cursor: pointer; 
+
+                 /* breakpoints */
+          @media screen and (max-width: 700px) {
+            display: block;
+            width: 90%;
+            margin: 2em auto;
+        } 
       }
 
 
@@ -241,12 +269,12 @@
           <div class="payment-wrapper" id="paymentWrapper">
               <div class="monthly-repayment">
                   <p class="monthly-message"></p>
-                  <p class="monthly-amount"></p>
+                  <p class="monthly-amount" aria-live="polite"></p>
               </div>
 
               <div class="overall-repayment">
                   <p class="total-message"></p>
-                  <p class="total-amount"></p>
+                  <p class="total-amount" aria-live="polite"></p>
               </div>
           </div> 
         </section>
