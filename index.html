@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+      body {
+          margin: 0;
+          background-color: #add8e6;
+      }
+      main {
+          display: flex;
+          justify-content: center;
+          padding: 20px 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 20px;
+        border-radius: 15px 15px 20px 15px;
+      }
+      .input-field {
+          width: 300px;
+          height: 380px;
+          background-color: #fff; 
+          border-radius: 10px;
+      }
+      .input-field span {
+          color: #5b5b5b;
+          font-size: 13px;
+      }
+      .name-and-clear-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 20px;
+          font-size: 10px;
+      }
+      .clear-all {
+          color: gray;
+          text-decoration: underline;
+          background-color: transparent;
+          font-size: 11.5px; 
+          border: none;
+          cursor: pointer; 
+      }
+
+      .mort-amount {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          margin: 0 20px;
+          gap: 5px;
+      }
+      .amount {
+          padding: 8px 40px;
+      }
+      .placeholder-amount {
+          position: absolute;
+          display: block;
+          top: 37.5%;
+          left: 0.5%;
+          padding: 9.5px;  
+          background-color: #add8e6;
+      }
+
+      .y-and-i-wrapper {
+          display: flex;
+          margin: 20px 0 20px 20px ;
+      }
+      .y-and-i-wrapper label {
+          position: relative;
+      }
+      .y-and-i-wrapper input {
+          width: 90%;
+          padding: 8px 0;
+          margin-top: 5px;
+      }
+      .y-and-i-wrapper .placeholder-years {
+          position: absolute;
+          top: 40.9%;
+          right: 7.7%;
+          padding: 9.5px;  
+          background-color: #add8e6;
+      }
+      .y-and-i-wrapper .placeholder-percent {
+          position: absolute;
+          top: 40.9%;
+          right: 7.7%;
+          padding: 9.5px;
+          background-color: #add8e6;
+
+      }
+
+
+          /* Morgate Type */
+      .mortgage-type {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          font-size: 14px;
+      }
+      .mortgage-type span {
+          margin: 0 20px;
+      }
+      .mortgage-type label {
+          padding: 8px 0;
+          margin: 0 20px;
+          border: 1px solid #000;
+          border-radius: 5px;
+      }
+    
+
+      .calculate {
+          padding: 10px 30px;
+          text-align: center;
+          background-color: yellow;
+          margin: 20px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer; 
+      }
+
+
+            /* result field */
+      .result-field {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          height: 380px;
+          background-color: rgb(22, 47, 70);
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+          border-bottom-left-radius: 40px;
+      }
+      .result-field p {
+          color: #fff;
+      }
+      .result-field small {
+          color: #ffffff81;
+          text-align: center;
+          margin: 0.8em;
+      }
+
+      .payment-wrapper {
+          display: none;
+          width: 80%;
+          background-color: rgb(10, 10, 31);
+          border-top: 2px solid #ffff00;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+      }
+      .monthly-repayment {
+          margin: 10px;
+          border-bottom: 2px solid #ffffff34;
+      }
+      .monthly-message,
+      .total-message {
+          color:  #ffffff34;
+          font-size: 14px;
+      }
+      .monthly-amount {
+          color:  #ffff00;
+          font-size: 2em;
+      }
+      .overall-repayment {
+          margin-left: 20px;
+      }
+      .total-amount {
+          font-size: 24px;
+      }  
+  </style>
+</head>
+
+<body>
+    <main>
+      <div class="container">
+        <section class="input-field">
+          <div class="name-and-clear-wrapper">
+            <h2>Mortgage Calculator</h2>
+            <button type="reset" class="clear-all" id="clearAll">Clear All</button>
+          </div>
+
+                <!-- Mortage Amount -->
+          <label for="amount" class="mort-amount">
+            <span>Mortgage Amount</span> 
+            <input class="amount" id="amount" inputmode="numeric">
+            <span class="placeholder-amount">&pound;</span>
+          </label>
+
+                <!-- years and Interest -->
+          <div class="y-and-i-wrapper">
+            <label>
+              <span>Mortgage Term</span>
+              <input type="number" id="year">
+              <span class="placeholder-years">Years</span>
+            </label>
+
+                  <!-- Morgate Term -->
+            <label>
+              <span>Interest Rate</span>
+              <input type="number" id="percent">
+              <span class="placeholder-percent">&#37;</span>
+            </label>
+          </div>
+
+                  <!-- Morgate Type -->
+          <div class="mortgage-type">
+            <span>Mortgage Type</span>
+            <label for="repayment">
+              <input type="radio" name="mortgageType" id="repayment">
+              Repayment
+            </label>
+            
+            <label for="interest">
+              <input type="radio" name="mortgageType" id="interest" aria-colindex="">
+              Interest Only
+            </label>
+          </div>
+
+          <button type="submit" class="calculate" id="calculate" onclick="calculatePayment()"><i class="fa-solid fa-calculator"></i> Calculate Repayments</button>
+        </section>
+  
+                  <!-- results field-->
+        <section class="result-field">
+          <img src="/Screenshot 2024-11-02 190551.png" alt="calculator">
+          <p class="result" id="result">Results shown here</p>
+          <small class="info">Complete the form and click "calculate repayment" to see what your monthly repayment would be.</small>
+
+          <div class="payment-wrapper" id="paymentWrapper">
+              <div class="monthly-repayment">
+                  <p class="monthly-message"></p>
+                  <p class="monthly-amount"></p>
+              </div>
+
+              <div class="overall-repayment">
+                  <p class="total-message"></p>
+                  <p class="total-amount"></p>
+              </div>
+          </div> 
+        </section>
+      </div>
+    </main>
+
+    <script src="../scritp.js"></script>
+</body>
+</html>
