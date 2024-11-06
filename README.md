@@ -54,6 +54,5 @@ I am still a novice in JavaScript. I want to continue developing my skills in th
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - https://www.frontendmentor.io/profile/akin-holo
 - Twitter - https://x.com/AkinHolo
