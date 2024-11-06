@@ -55,4 +55,4 @@ I am still a novice in JavaScript. I want to continue developing my skills in th
 ## Author
 
 - Frontend Mentor - https://www.frontendmentor.io/profile/akin-holo
-- Twitter - https://x.com/AkinHolo
+- Twitter - @AkinHolo (https://x.com/AkinHolo)
