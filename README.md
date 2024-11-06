@@ -28,8 +28,8 @@ This is a solution to the Mortgage calculator challenge on Frontend Mentor. The 
 
 ### Links
 
-- Solution URL: https://github.com/akin-holo/Frontendmentor-challenge-4-MortgageCalculator
-- Live Site URL: https://solution4-mortgage-calculator.netlify.app/
+- Solution URL: [Frontendmentor-challenge-4-MortgageCalculator.github.io](https://github.com/akin-holo/Frontendmentor-challenge-4-MortgageCalculator)
+- Live Site URL: [solution4.mortgage-caculator.netlify.com](https://solution4-mortgage-calculator.netlify.app/)
 
 ## My process
 
@@ -54,5 +54,5 @@ I am still a novice in JavaScript. I want to continue developing my skills in th
 
 ## Author
 
-- Frontend Mentor - https://www.frontendmentor.io/profile/akin-holo
-- Twitter - @AkinHolo (https://x.com/AkinHolo)
+- Frontend Mentor - [@akin-holo](https://www.frontendmentor.io/profile/akin-holo)
+- Twitter - [@AkinHolo](https://x.com/AkinHolo)
